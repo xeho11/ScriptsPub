@@ -503,7 +503,6 @@ do
             ImageColor3 = Color3.new(0, 0, 0);
             ZIndex = 19;
             Parent = SatVibMap;
-            Visible = false;
         });
 
         local CursorInner = Library:Create('ImageLabel', {
@@ -513,7 +512,6 @@ do
             Image = 'http://www.roblox.com/asset/?id=9619665977';
             ZIndex = 20;
             Parent = CursorOuter;
-            Visible = false;
         })
 
         local HueSelectorOuter = Library:Create('Frame', {
@@ -3457,7 +3455,7 @@ function Library:CreateWindow(...)
             Cursor.PointB = Vector2.new(mPos.X, mPos.Y) + Vector2.new(6, 14);
             Cursor.PointC = Vector2.new(mPos.X, mPos.Y) + Vector2.new(-6, 14);
 
-            Cursor.Visible = false;
+            Cursor.Visible = not InputService.MouseIconEnabled;
 
             RenderStepped:Wait();
         end;
