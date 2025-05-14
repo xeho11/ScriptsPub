@@ -260,10 +260,10 @@ local SaveManager = {} do
 
 		-- SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
 
-		-- if isfile(self.Folder .. '/settings/autoload.txt') then
-		-- 	local name = readfile(self.Folder .. '/settings/autoload.txt')
-		-- 	SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)
-		-- end
+		if isfile(self.Folder .. '/settings/autoload.txt') then
+			local name = readfile(self.Folder .. '/settings/autoload.txt')
+			self.Library:Notify('Current autoload config: ' .. name)
+		end
 
 		SaveManager:SetIgnoreIndexes({ 'SaveManager_ConfigList', 'SaveManager_ConfigName' })
 	end
