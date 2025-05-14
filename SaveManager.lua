@@ -1,7 +1,7 @@
 local httpService = game:GetService('HttpService')
 
 local SaveManager = {} do
-	SaveManager.Folder = 'MintXSettings'
+	SaveManager.Folder = 'MintX'
 	SaveManager.Ignore = {}
 	SaveManager.Parser = {
 		Toggle = {
