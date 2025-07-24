@@ -37,7 +37,7 @@ local Library = {
     RiskColor = Color3.fromRGB(255, 50, 50),
 
     Black = Color3.new(0, 0, 0);
-    Font = Font.new([[rbxasset://fonts/families/Montserrat.json]],Enum.FontWeight.Bold),
+    Font = Font.new([[rbxasset://fonts/families/Montserrat.json]]),
 
     OpenedFrames = {};
     DependencyBoxes = {};
