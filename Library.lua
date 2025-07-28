@@ -2905,6 +2905,9 @@ function Library:CreateWindow(...)
         Parent = ScreenGui;
     });
 
+	local corner1 = Instance.new('UICorner', Inner)
+	corner1.CornerRadius = UDim.new(0,4)
+
     Library:MakeDraggable(Outer, 25);
 
     local Inner = Library:Create('Frame', {
@@ -2919,7 +2922,7 @@ function Library:CreateWindow(...)
     });
 
     local corner = Instance.new('UICorner', Inner)
-	corner.CornerRadius = UDim.new(2,0)
+	corner.CornerRadius = UDim.new(0,4)
 
     Library:AddToRegistry(Inner, {
         BackgroundColor3 = 'MainColor';
