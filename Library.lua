@@ -2906,7 +2906,7 @@ function Library:CreateWindow(...)
     });
 
 	local corner1 = Instance.new('UICorner', Outer)
-	corner1.CornerRadius = UDim.new(0,4)
+	corner1.CornerRadius = UDim.new(0,6)
 
     Library:MakeDraggable(Outer, 25);
 
@@ -2922,7 +2922,7 @@ function Library:CreateWindow(...)
     });
 
     local corner = Instance.new('UICorner', Inner)
-	corner.CornerRadius = UDim.new(0,4)
+	corner.CornerRadius = UDim.new(0,5)
 
     Library:AddToRegistry(Inner, {
         BackgroundColor3 = 'MainColor';
