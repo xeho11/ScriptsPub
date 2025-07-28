@@ -2905,7 +2905,7 @@ function Library:CreateWindow(...)
         Parent = ScreenGui;
     });
 
-	local corner1 = Instance.new('UICorner', Inner)
+	local corner1 = Instance.new('UICorner', Outer)
 	corner1.CornerRadius = UDim.new(0,4)
 
     Library:MakeDraggable(Outer, 25);
