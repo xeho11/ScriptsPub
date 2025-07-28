@@ -2896,7 +2896,7 @@ function Library:CreateWindow(...)
 
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
-        BackgroundColor3 = Color3.new(0, 0, 0);
+        BackgroundColor3 = Library.AccentColor;
         BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
@@ -2906,7 +2906,7 @@ function Library:CreateWindow(...)
     });
 
 	local corner1 = Instance.new('UICorner', Outer)
-	corner1.CornerRadius = UDim.new(0,6)
+	corner1.CornerRadius = UDim.new(0,5)
 
     Library:MakeDraggable(Outer, 25);
 
