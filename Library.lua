@@ -2918,9 +2918,8 @@ function Library:CreateWindow(...)
         Parent = Outer;
     });
 
-    local corner = Instance.new('UICorner')
-	corner.CornerRadius = UDim.new(0,4)
-	corner.Parent = Inner
+    local corner = Instance.new('UICorner', Inner)
+	corner.CornerRadius = UDim.new(2,0)
 
     Library:AddToRegistry(Inner, {
         BackgroundColor3 = 'MainColor';
