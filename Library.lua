@@ -2896,7 +2896,7 @@ function Library:CreateWindow(...)
 
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
-        BackgroundColor3 = Library.AccentColor;
+        BackgroundColor3 = Color3.fromRGB(0,149,170);
         BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
