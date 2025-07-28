@@ -2896,13 +2896,18 @@ function Library:CreateWindow(...)
 
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
-        BackgroundColor3 = Color3.fromRGB(0,149,170);
+        BackgroundColor3 = Library.AccentColor;
         BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
         Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
+    });
+
+    Library:AddToRegistry(Outer, {
+        BackgroundColor3 = 'AccentColor';
+        BorderColor3 = 'AccentColor';
     });
 
 	local corner1 = Instance.new('UICorner', Outer)
