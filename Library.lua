@@ -31,7 +31,7 @@ local Teams = GetService('Teams');
 local Players = GetService('Players');
 local RunService = GetService('RunService')
 local RenderStepped = __index(RunService, "RenderStepped")
-local LocalPlayer = __index(Players, "LocalPlayer")
+local LocalPlayer = Players.LocalPlayer
 local Mouse = __index(LocalPlayer, "GetMouse")
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
