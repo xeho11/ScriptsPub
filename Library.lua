@@ -43,9 +43,7 @@ local GetMouseObject = function()
     end
 end
 
-
 local Mouse = GetMouseObject()
-print('PLEASE WORK SO IS ', Mouse)
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
