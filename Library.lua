@@ -32,7 +32,6 @@ local Players = GetService('Players');
 local RunService = GetService('RunService')
 local RenderStepped = __index(RunService, "RenderStepped")
 local LocalPlayer = __index(Players, "LocalPlayer")
-local Mouse = __index(LocalPlayer, "GetMouse")
 
 local _GetMouse = __index(LocalPlayer, "GetMouse")
 
@@ -46,8 +45,6 @@ end
 
 print('is new version and it should work')
 local Mouse = GetMouseObject()
-
-local Mouse = __index(LocalPlayer, "GetMouse")
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
