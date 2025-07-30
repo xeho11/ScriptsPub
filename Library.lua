@@ -24,6 +24,14 @@ local GetService = function(Service)
 	return cloneref(_GetService(game, Service))
 end
 
+local GetMouseObject = function()
+    if LocalPlayer then
+        return _GetMouse(LocalPlayer)
+    else
+        return nil
+    end
+end
+
 local InputService = GetService('UserInputService');
 local TextService = GetService('TextService');
 local CoreGui = GetService('CoreGui');
@@ -31,8 +39,20 @@ local Teams = GetService('Teams');
 local Players = GetService('Players');
 local RunService = GetService('RunService')
 local RenderStepped = __index(RunService, "RenderStepped")
-local LocalPlayer = Players.LocalPlayer
+local LocalPlayer = __index(Players, "LocalPlayer")
 local Mouse = __index(LocalPlayer, "GetMouse")
+
+local _GetMouse = __index(LocalPlayer, "GetMouse")
+
+local GetMouseObject = function()
+    if LocalPlayer then
+        return _GetMouse(LocalPlayer)
+    else
+        return nil
+    end
+end
+
+local Mouse = GetMouseObject()
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
