@@ -2503,9 +2503,9 @@ do
         InputService.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = ListOuter.AbsolutePosition, ListOuter.AbsoluteSize;
-
-                if Mouse.X < AbsPos.X or Mouse.X > AbsPos.X + AbsSize.X
-                    or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
+		local MouseX, MouseY = __index(Mouse,'X'), __index(Mouse,'Y')
+                if MouseX < AbsPos.X or MouseX > AbsPos.X + AbsSize.X
+                    or MouseY < (AbsPos.Y - 20 - 1) or MouseY > AbsPos.Y + AbsSize.Y then
 
                     Dropdown:CloseDropdown();
                 end;
