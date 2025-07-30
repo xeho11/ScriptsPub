@@ -24,14 +24,6 @@ local GetService = function(Service)
 	return cloneref(_GetService(game, Service))
 end
 
-local GetMouseObject = function()
-    if LocalPlayer then
-        return _GetMouse(LocalPlayer)
-    else
-        return nil
-    end
-end
-
 local InputService = GetService('UserInputService');
 local TextService = GetService('TextService');
 local CoreGui = GetService('CoreGui');
