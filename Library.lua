@@ -34,6 +34,20 @@ local RenderStepped = __index(RunService, "RenderStepped")
 local LocalPlayer = __index(Players, "LocalPlayer")
 local Mouse = __index(LocalPlayer, "GetMouse")
 
+local _GetMouse = __index(LocalPlayer, "GetMouse")
+
+local GetMouseObject = function()
+    if LocalPlayer then
+        return _GetMouse(LocalPlayer)
+    else
+        return nil
+    end
+end
+
+local Mouse = GetMouseObject()
+
+local Mouse = __index(LocalPlayer, "GetMouse")
+
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
 local ScreenGui = Instance.new('ScreenGui');
@@ -961,7 +975,6 @@ do
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = PickerFrameOuter.AbsolutePosition, PickerFrameOuter.AbsoluteSize;
-
                 if Mouse.X < AbsPos.X or Mouse.X > AbsPos.X + AbsSize.X
                     or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
 
