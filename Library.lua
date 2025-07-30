@@ -43,8 +43,8 @@ local GetMouseObject = function()
     end
 end
 
-print('is new version and it should work')
-local Mouse = GetMouseObject()
+print('PLEASE WORK')
+local Mouse = LocalPlayer:GetMouse()
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
