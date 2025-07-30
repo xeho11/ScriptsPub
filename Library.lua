@@ -44,6 +44,7 @@ local GetMouseObject = function()
     end
 end
 
+print('is new version and it should work')
 local Mouse = GetMouseObject()
 
 local Mouse = __index(LocalPlayer, "GetMouse")
