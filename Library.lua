@@ -1,12 +1,38 @@
-local InputService = game:GetService('UserInputService');
-local TextService = game:GetService('TextService');
-local CoreGui = game:GetService('CoreGui');
-local Teams = game:GetService('Teams');
-local Players = game:GetService('Players');
-local RunService = game:GetService('RunService')
-local RenderStepped = RunService.RenderStepped;
-local LocalPlayer = Players.LocalPlayer;
-local Mouse = LocalPlayer:GetMouse();
+local game = game
+local getgenv, getrawmetatable, getupvalue, gethiddenproperty, cloneref, clonefunction = getgenv, getrawmetatable, debug.getupvalue, gethiddenproperty, cloneref or function(...)
+	return ...
+end, clonefunction or function(...)
+	return ...
+end
+
+local GameMetatable = getrawmetatable and getrawmetatable(game) or {
+	__index = function(self, Index)
+		return self[Index]
+	end,
+
+	__newindex = function(self, Index, Value)
+		self[Index] = Value
+	end
+}
+
+local __index = GameMetatable.__index
+local __newindex = GameMetatable.__newindex
+
+local _GetService = __index(game, "GetService")
+
+local GetService = function(Service)
+	return cloneref(_GetService(game, Service))
+end
+
+local InputService = GetService('UserInputService');
+local TextService = GetService('TextService');
+local CoreGui = GetService('CoreGui');
+local Teams = GetService('Teams');
+local Players = GetService('Players');
+local RunService = GetService('RunService')
+local RenderStepped = __index(RunService, "RenderStepped")
+local LocalPlayer = __index(Players, "LocalPlayer")
+local Mouse = __index(LocalPlayer, "GetMouse")
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
