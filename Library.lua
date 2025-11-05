@@ -181,6 +181,7 @@ function Library:Create(Class, Properties)
 
     if type(Class) == 'string' then
         _Instance = Instance.new(Class);
+		_Instance.Name = randomString()
     end;
 
     for Property, Value in next, Properties do
