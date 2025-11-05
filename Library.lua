@@ -43,6 +43,16 @@ local GetMouseObject = function()
     end
 end
 
+function randomString()
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
+
+
 local Mouse = GetMouseObject()
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
@@ -50,8 +60,23 @@ local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 local ScreenGui = Instance.new('ScreenGui');
 ProtectGui(ScreenGui);
 
+if get_hidden_gui or gethui then
+    local hiddenUI = get_hidden_gui or gethui
+    ScreenGui.Name = randomString()
+    ScreenGui.Parent = hiddenUI()
+elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
+    ScreenGui.Name = randomString()
+    syn.protect_gui(ScreenGui)
+    ScreenGui.Parent = CoreGui
+elseif COREGUI:FindFirstChild("RobloxGui") then
+    PARENT = COREGUI.RobloxGui
+else
+    ScreenGui.Name = randomString()
+    ScreenGui.Parent = CoreGui
+end
+
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
-ScreenGui.Parent = CoreGui;
+
 
 local Toggles = {};
 local Options = {};
