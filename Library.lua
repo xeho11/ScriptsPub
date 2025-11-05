@@ -55,10 +55,7 @@ end
 
 local Mouse = GetMouseObject()
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
-
 local ScreenGui = Instance.new('ScreenGui');
-ProtectGui(ScreenGui);
 
 if get_hidden_gui or gethui then
     local hiddenUI = get_hidden_gui or gethui
@@ -68,8 +65,8 @@ elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
     ScreenGui.Name = randomString()
     syn.protect_gui(ScreenGui)
     ScreenGui.Parent = CoreGui
-elseif COREGUI:FindFirstChild("RobloxGui") then
-    PARENT = COREGUI.RobloxGui
+elseif CoreGui:FindFirstChild("RobloxGui") then
+    Screengui.Parent = CoreGui.RobloxGui
 else
     ScreenGui.Name = randomString()
     ScreenGui.Parent = CoreGui
